@@ -1,0 +1,20 @@
+name: Publish package to Packagist 📦
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish-to-packagist:
+    name: Publish PHP package 📦 to Packagist
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Trigger Packagist update
+      run: |
+        curl -X POST \
+          -H "content-type: application/x-www-form-urlencoded" \
+          -d'{"repository":{"url":"PACKAGIST_PACKAGE_URL"}}'
+          https://packagist.org/api/update-package?username=briva&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}
