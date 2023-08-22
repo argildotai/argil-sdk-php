@@ -139,4 +139,13 @@ class ArgilSdkGlobalConfig {
         }
         $this->config['defaultAsyncTimeout'] = $timeout;
     }
+    
+    /**
+     * Convert the configuration to an associative array.
+     * 
+     * @return array The configuration as an associative array.
+     */
+    public function toObject() {
+        return $this->config;
+    }
 }

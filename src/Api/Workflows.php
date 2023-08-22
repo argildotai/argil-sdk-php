@@ -22,7 +22,8 @@ class Workflows extends Base {
      */
     public function run($id, $input, $runtimeConfig = null) {
         // Merge global configuration with runtime configuration
-        $config = array_merge($this->globalConfig->toArray(), $runtimeConfig);
+        $runtimeConfigInstance = new ArgilSdkRuntimeConfig($runtimeConfig);
+        $config = array_merge($this->globalConfig->toObject(), $runtimeConfigInstance->toObject());
         
         // Determine the timeout based on whether the request is synchronous or asynchronous
         $timeout = $config['synchronous'] ? $config['defaultSyncTimeout'] : $config['defaultAsyncTimeout'];
