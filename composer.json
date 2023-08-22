@@ -1,5 +1,5 @@
 {
-    "name": "monolog/sdk",
+    "name": "argil/sdk",
     "type": "library",
     "description": "Argil SDK for PHP",
     "keywords": ["Argil", "SDK", "AI"],
