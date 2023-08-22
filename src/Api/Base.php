@@ -3,6 +3,7 @@
 namespace ArgilSdk\Api;
 
 use ArgilSdk\Config\ArgilSdkGlobalConfig;
+use ArgilSdk\Config\ArgilSdkRuntimeConfig;
 use ArgilSdk\Error\ArgilError;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
