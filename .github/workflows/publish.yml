@@ -16,5 +16,5 @@ jobs:
       run: |
         curl -X POST \
           -H "content-type: application/x-www-form-urlencoded" \
-          -d'{"repository":{"url":"PACKAGIST_PACKAGE_URL"}}'
+          -d'{"repository":{"url":"https://packagist.org/packages/argil/sdk"}}'
           https://packagist.org/api/update-package?username=briva&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}
