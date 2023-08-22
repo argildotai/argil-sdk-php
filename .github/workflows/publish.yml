@@ -14,5 +14,5 @@ jobs:
 
     - name: Trigger Packagist update
       run: |
-        curl -X POST -H "content-type: application/json" -d'{"repository":{"url":"https://packagist.org/packages/argil/sdk"}}' https://packagist.org/api/update-package?username=briva&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}
+        curl -XPOST -H'content-type:application/json' https://packagist.org/api/update-package?username=briva&apiToken=${{ secrets.PACKAGIST_API_TOKEN }} -d'{"repository":{"url":"https://packagist.org/packages/argil/sdk"}}'
 
