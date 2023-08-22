@@ -4,6 +4,7 @@ namespace ArgilSdk\Api;
 
 use ArgilSdk\Helpers;
 use ArgilSdk\Error\ArgilError;
+use ArgilSdk\Config\ArgilSdkRuntimeConfig;
 
 /**
  * Class responsible for interacting with the Workflows service of the Argil API.
