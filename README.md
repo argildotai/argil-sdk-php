@@ -20,7 +20,7 @@ For the full Argil documentation, please visit https://docs.argil.ai.
 This library is distributed on `composer`. In order to add it as a dependency, run the following command:
 
 ```bash
-composer require argil/argil-sdk
+composer require argil/sdk
 ```
 
 ## Usage
@@ -41,17 +41,14 @@ Or pass the configuration parameters to the constructor:
 
 ```php
 use Argil\ArgilSdk;
-use Argil\Config\ArgilSdkGlobalConfigParams;
 
-$config = new ArgilSdkGlobalConfigParams([
+$sdk = new ArgilSdk([
   'apiKey' => 'your-api-key', # optional, can be provided with an environment variable named ARGIL_API_KEY
   'apiUrl' => 'https://api.argil.ai', # optional, default is 'https://api.argil.ai'
   'synchronous' => false, # optional, default is false. Defines if the workflows should run synchronously or not.
   'defaultSyncTimeout' => 60000, # optional, default is 60000 milliseconds for synchronous requests
   'defaultAsyncTimeout' => 2000, # optional, default is 2000 milliseconds for asynchronous requests
 ]);
-
-$sdk = new ArgilSdk($config);
 ```
 
 2. Use the SDK client to call Argil's API routes
@@ -72,7 +69,7 @@ $run = $sdk->workflows->run(
 );
 
 # Get a workflow run
-$workflowRun = $sdk->workflowRuns->get($run->getId());
+$workflowRun = $sdk->workflowRuns->get($run['id'];
 
 # Get all workflow runs
 $workflowRuns = $sdk->workflowRuns->list();
