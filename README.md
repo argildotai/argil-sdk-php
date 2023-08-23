@@ -69,7 +69,7 @@ $run = $sdk->workflows->run(
 );
 
 # Get a workflow run
-$workflowRun = $sdk->workflowRuns->get($run['id'];
+$workflowRun = $sdk->workflowRuns->get($run['id']);
 
 # Get all workflow runs
 $workflowRuns = $sdk->workflowRuns->list();
