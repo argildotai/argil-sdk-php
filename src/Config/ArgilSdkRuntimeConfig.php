@@ -19,10 +19,11 @@ class ArgilSdkRuntimeConfig {
      * 
      * @param array $params Optional configuration parameters.
      */
-    public function __construct($params = []) {
+    public function __construct($params = null) {
         $defaults = [
             'synchronous' => false,
         ];
+        $params = is_array($params) ? $params : [];
         $this->config = array_merge($defaults, $params);
         $this->validate();
     }

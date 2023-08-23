@@ -37,7 +37,7 @@ class Workflows extends Base {
             $startTime = time();
 
             // Continue checking the status of the workflow run as long as it's "RUNNING"
-            while ($response['status'] === 'RUNNING') {
+            while ($response['status'] === 'QUEUED' || $response['status'] === 'RUNNING') {
                 // If the elapsed time exceeds the timeout, throw an error
                 if ((time() - $startTime) * 1000 > $timeout) {
                     throw new ArgilError('Workflow execution timed out.', 408);
@@ -47,7 +47,7 @@ class Workflows extends Base {
                 usleep(5000 * 1000);
                 
                 // Fetch the current status of the workflow run
-                $response = $this->request('GET', "/getWorkflowRun/{$id}");
+                $response = $this->request('GET', "/getWorkflowRun/{$response['id']}");
 
                 // If the workflow run has failed, throw an error
                 if ($response['status'] === 'FAILED') {

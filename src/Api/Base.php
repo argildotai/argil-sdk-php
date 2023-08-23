@@ -53,22 +53,23 @@ abstract class Base {
         $config = array_merge($this->globalConfig->toObject(), $runtimeConfigInstance->toObject());
 
         // Determine the timeout based on the configuration.
-        $timeout = $config['synchronous'] ? $config['defaultSyncTimeout'] : $config['defaultAsyncTimeout'];
         if (isset($config['timeout'])) {
             $timeout = $config['timeout'];
-        }
-
-        // Add the synchronous flag to the data if data is provided.
-        if ($data) {
-            $data['synchronous'] = $config['synchronous'];
+        } else {
+            $timeout = $config['defaultSyncTimeout'];
         }
 
         // Update the client instance with the determined timeout.
         $client = $this->globalConfig->updateClientInstance($timeout);
 
+        $options = [];
+        if (!empty($data)) {
+            $options['json'] = $data;
+        }
+
         // Make the request and handle potential exceptions.
         try {
-            $response = $client->request($method, $url, ['json' => $data]);
+            $response = $client->request($method, $url, $options);
             return json_decode($response->getBody(), true);
         } catch (RequestException $e) {
             throw new ArgilError($e->getMessage(), $e->getCode());

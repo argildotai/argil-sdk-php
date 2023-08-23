@@ -32,6 +32,11 @@ class ArgilSdkGlobalConfig {
             'defaultSyncTimeout' => 60000,
             'defaultAsyncTimeout' => 2000,
         ];
+
+        if (empty($params['apiKey'])) {
+            $params['apiKey'] = getenv('ARGIL_API_KEY') ?: '';
+        }
+
         $this->config = array_merge($defaults, $params);
         $this->validate();
 
@@ -42,6 +47,7 @@ class ArgilSdkGlobalConfig {
             ]
         ]);
     }
+
 
     /**
      * Validates the configuration parameters.
@@ -71,7 +77,7 @@ class ArgilSdkGlobalConfig {
     public function updateClientInstance($timeout) {
         $this->client = new Client([
             'base_uri' => $this->config['apiUrl'],
-            'timeout' => $timeout / 1000, // Convert to seconds for Guzzle
+            'timeout' => $timeout / 1000,
             'headers' => [
                 'Authorization' => 'Bearer ' . $this->config['apiKey']
             ]
