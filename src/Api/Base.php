@@ -1,10 +1,10 @@
 <?php
 
-namespace ArgilSdk\Api;
+namespace Argil\Api;
 
-use ArgilSdk\Config\ArgilSdkGlobalConfig;
-use ArgilSdk\Config\ArgilSdkRuntimeConfig;
-use ArgilSdk\Error\ArgilError;
+use Argil\Config\ArgilSdkGlobalConfig;
+use Argil\Config\ArgilSdkRuntimeConfig;
+use Argil\Error\ArgilError;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 

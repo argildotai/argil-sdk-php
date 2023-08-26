@@ -1,6 +1,6 @@
 <?php
 
-namespace ArgilSdk\Interfaces;
+namespace Argil\Interfaces;
 
 /**
  * Interface representing a WorkflowRun.

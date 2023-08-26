@@ -1,6 +1,6 @@
 <?php
 
-namespace ArgilSdk\Error;
+namespace Argil\Error;
 
 /**
  * Custom exception class for Argil SDK errors.

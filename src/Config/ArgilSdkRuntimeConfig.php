@@ -1,8 +1,8 @@
 <?php
 
-namespace ArgilSdk\Config;
+namespace Argil\Config;
 
-use ArgilSdk\Error\ArgilError;
+use Argil\Error\ArgilError;
 
 /**
  * Class responsible for managing the runtime configuration of the Argil SDK.

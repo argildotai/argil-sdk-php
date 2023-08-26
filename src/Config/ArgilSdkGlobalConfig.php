@@ -1,8 +1,8 @@
 <?php
 
-namespace ArgilSdk\Config;
+namespace Argil\Config;
 
-use ArgilSdk\Error\ArgilError;
+use Argil\Error\ArgilError;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
 

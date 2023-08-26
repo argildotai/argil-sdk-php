@@ -1,10 +1,10 @@
 <?php
 
-namespace ArgilSdk;
+namespace Argil;
 
-use ArgilSdk\Api\Workflows;
-use ArgilSdk\Api\WorkflowRuns;
-use ArgilSdk\Config\ArgilSdkGlobalConfig;
+use Argil\Api\Workflows;
+use Argil\Api\WorkflowRuns;
+use Argil\Config\ArgilSdkGlobalConfig;
 
 /**
  * Main class for the Argil SDK.
