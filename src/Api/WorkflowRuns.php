@@ -1,6 +1,6 @@
 <?php
 
-namespace ArgilSdk\Api;
+namespace Argil\Api;
 
 /**
  * Class responsible for interacting with the WorkflowRuns service of the Argil API.

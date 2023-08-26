@@ -1,10 +1,10 @@
 <?php
 
-namespace ArgilSdk\Api;
+namespace Argil\Api;
 
-use ArgilSdk\Helpers;
-use ArgilSdk\Error\ArgilError;
-use ArgilSdk\Config\ArgilSdkRuntimeConfig;
+use Argil\Helpers;
+use Argil\Error\ArgilError;
+use Argil\Config\ArgilSdkRuntimeConfig;
 
 /**
  * Class responsible for interacting with the Workflows service of the Argil API.
